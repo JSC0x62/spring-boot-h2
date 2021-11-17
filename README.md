@@ -1,4 +1,4 @@
-# persistence-hibernate
+# spring-boot-h2
 Sample Spring Boot Rest API with Hibernate and Junit 5
 
 ## Workspace setup
