@@ -1,5 +1,7 @@
 # spring-boot-h2
-Sample Spring Boot Rest API with Hibernate and Junit 5
+Sample Spring Boot JDBC API with Junit 5. The project is based on the following  
+<https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html>  
+<https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/namedparam/MapSqlParameterSource.html> 
 
 ## Workspace setup
 Download and install java <https://jdk.java.net/>
