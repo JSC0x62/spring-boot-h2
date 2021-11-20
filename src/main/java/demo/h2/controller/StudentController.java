@@ -13,7 +13,6 @@ public class StudentController {
 
     @GetMapping("/{username}")
     public Student getStudent(@PathVariable String username) {
-        StudentController studentService; //?
         return studentService.getStudent(username);
     }
 
