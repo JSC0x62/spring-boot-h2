@@ -2,7 +2,9 @@ package demo.h2.service.impl;
 
 import demo.h2.domain.Student;
 import demo.h2.service.StudentService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StudentServiceImpl implements StudentService {
 
     @Override
