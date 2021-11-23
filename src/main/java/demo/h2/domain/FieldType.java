@@ -2,7 +2,6 @@ package demo.h2.domain;
 
 public enum FieldType {
 
-    FieldType
     USERNAME("username"),
     PASSWORD("password"),
     FIRSTNAME("firstname"),
