@@ -14,19 +14,6 @@ public class Student {
 
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return username.equals(student.username);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(username);
-    }
-
     public String getUsername() {
         return username;
     }
@@ -66,6 +53,19 @@ public class Student {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return username.equals(student.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
     }
 
     @Override
