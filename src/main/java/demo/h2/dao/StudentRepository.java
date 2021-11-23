@@ -18,7 +18,7 @@ public class StudentRepository {
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    public Student getUser(String username) {
+    public Student getStudent(String username) {
         try {
             String query = "SELECT username, password, firstname, lastname, email FROM students WHERE username = :username";
             MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
@@ -30,7 +30,7 @@ public class StudentRepository {
         }
     }
 
-    public void updateUser(Student student) {
+    public void updateStudent(Student student) {
         String query = "UPDATE students SET firstname = :firstname, lastname = :lastname, email = :email, password = :password WHERE username = :username";
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
         mapSqlParameterSource.addValue(FieldType.FIRSTNAME.getValue(), student.getFirstname());
@@ -41,7 +41,7 @@ public class StudentRepository {
         namedParameterJdbcTemplate.update(query, mapSqlParameterSource);
     }
 
-    public void registerUser(Student student) {
+    public void registerStudent(Student student) {
         String query = "INSERT INTO students (username, password, firstname, lastname, email) VALUES (:username, :password, :firstname, :lastname, :email)";
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
         mapSqlParameterSource.addValue(FieldType.USERNAME.getValue(), student.getUsername());
@@ -52,7 +52,7 @@ public class StudentRepository {
         namedParameterJdbcTemplate.update(query, mapSqlParameterSource);
     }
 
-    public void deleteUser(String username) {
+    public void deleteStudent(String username) {
         String query = "DELETE FROM students WHERE username = :username";
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
         mapSqlParameterSource.addValue(FieldType.USERNAME.getValue(), username);
