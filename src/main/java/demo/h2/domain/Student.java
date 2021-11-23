@@ -1,5 +1,7 @@
 package demo.h2.domain;
 
+import java.util.Objects;
+
 public class Student {
 
     private String username;
@@ -10,6 +12,19 @@ public class Student {
 
     public Student() {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return username.equals(student.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
     }
 
     public String getUsername() {
