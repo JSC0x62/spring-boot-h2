@@ -20,7 +20,7 @@ public class StudentRepository {
 
     public Student getUser(String username) {
         try {
-            String query = "SELECT username, password, firstname, lastname, email FROM demo_users WHERE username = :username";
+            String query = "SELECT username, password, firstname, lastname, email FROM students WHERE username = :username";
             MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
             mapSqlParameterSource.addValue(FieldType.USERNAME.getValue(), username);
             return namedParameterJdbcTemplate.queryForObject(query, mapSqlParameterSource, new StudentRowMapper());
@@ -31,7 +31,7 @@ public class StudentRepository {
     }
 
     public void updateUser(Student student) {
-        String query = "UPDATE demo_users SET firstname = :firstname, lastname = :lastname, email = :email, password = :password WHERE username = :username";
+        String query = "UPDATE students SET firstname = :firstname, lastname = :lastname, email = :email, password = :password WHERE username = :username";
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
         mapSqlParameterSource.addValue(FieldType.FIRSTNAME.getValue(), student.getFirstname());
         mapSqlParameterSource.addValue(FieldType.LASTNAME.getValue(), student.getLastname());
@@ -42,7 +42,7 @@ public class StudentRepository {
     }
 
     public void registerUser(Student student) {
-        String query = "INSERT INTO demo_users (username, password, firstname, lastname, email) VALUES (:username, :password, :firstname, :lastname, :email)";
+        String query = "INSERT INTO students (username, password, firstname, lastname, email) VALUES (:username, :password, :firstname, :lastname, :email)";
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
         mapSqlParameterSource.addValue(FieldType.USERNAME.getValue(), student.getUsername());
         mapSqlParameterSource.addValue(FieldType.PASSWORD.getValue(), student.getPassword());
@@ -53,7 +53,7 @@ public class StudentRepository {
     }
 
     public void deleteUser(String username) {
-        String query = "DELETE FROM demo_users WHERE username = :username";
+        String query = "DELETE FROM students WHERE username = :username";
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
         mapSqlParameterSource.addValue(FieldType.USERNAME.getValue(), username);
         namedParameterJdbcTemplate.update(query, mapSqlParameterSource);
